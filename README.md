@@ -1,6 +1,6 @@
-# Moja app
-## Moja app
-### Moja app
-#### Moja app
-##### Moja app
-Moja app
+# HomeBudgetApp
+
+Aplikacja pisana w Java na freamworku Spring.
+Rest API
+
+
