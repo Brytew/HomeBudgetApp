@@ -15,15 +15,19 @@ public class TradeList {
     private int ObjectiveId;
     private int Source;
 
-    @ManyToMany
-    @JoinTable(
-            name = "ObjectiveId",
-            joinColumns = @JoinTable(name = "")!!!!!!!!!!!!!!!
-    )
-    private List<MonthlyExpenses> monthlyExpenses;
+//    @ManyToOne
+//    private List<MonthlyExpenses> monthlyExpenses;
 
     public TradeList() {
     }
+
+//    public List<MonthlyExpenses> getMonthlyExpenses() {
+//        return monthlyExpenses;
+//    }
+//
+//    public void setMonthlyExpenses(List<MonthlyExpenses> monthlyExpenses) {
+//        this.monthlyExpenses = monthlyExpenses;
+//    }
 
     public int getID() {
         return ID;

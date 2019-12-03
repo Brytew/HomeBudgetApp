@@ -1,9 +1,7 @@
 package com.homebudget.homeentirety.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "source")
 public class TradeFrom {
@@ -12,6 +10,7 @@ public class TradeFrom {
     private int ID;
     private String Banks;
     private float Rest;
+
 
     public TradeFrom() {
     }
