@@ -1,7 +1,7 @@
 package com.homebudget.homeentirety.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,17 +10,14 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-public class Users {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Summary {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int usersId;
-    private String nick;
-    private String email;
-    private int age;
+    private Long summaryId;
+    private String objective;
+    private int totally;
 
-    public Users() {
-    }
 
 }
-
