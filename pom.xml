@@ -38,7 +38,7 @@
             <groupId>com.microsoft.azure</groupId>
             <artifactId>azure-storage-spring-boot-starter</artifactId>
         </dependency>
-        <dependency>
+                <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.200</version>

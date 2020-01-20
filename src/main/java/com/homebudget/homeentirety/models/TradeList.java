@@ -1,11 +1,14 @@
 package com.homebudget.homeentirety.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Entity(name = "transactionList")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class TradeList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,19 +18,20 @@ public class TradeList {
     private int ObjectiveId;
     private int Source;
 
-//    @ManyToOne
-//    private List<MonthlyExpenses> monthlyExpenses;
+  //  @ManyToOne
+    @ManyToMany //(mappedBy = "transactionList")
+    private List<MonthlyExpenses> monthlyExpenses;
 
     public TradeList() {
     }
 
-//    public List<MonthlyExpenses> getMonthlyExpenses() {
-//        return monthlyExpenses;
-//    }
-//
-//    public void setMonthlyExpenses(List<MonthlyExpenses> monthlyExpenses) {
-//        this.monthlyExpenses = monthlyExpenses;
-//    }
+    public List<MonthlyExpenses> getMonthlyExpenses() {
+        return monthlyExpenses;
+    }
+
+    public void setMonthlyExpenses(List<MonthlyExpenses> monthlyExpenses) {
+        this.monthlyExpenses = monthlyExpenses;
+    }
 
     public int getID() {
         return ID;

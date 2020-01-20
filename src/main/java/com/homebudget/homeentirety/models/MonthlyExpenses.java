@@ -1,35 +1,39 @@
 package com.homebudget.homeentirety.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.homebudget.homeentirety.repositories.TradeListRepository;
 import com.sun.xml.bind.v2.model.core.ID;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "expenses")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class MonthlyExpenses {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
     private String Objective;
-    private float Totally;
+    private int Totally;
 
-//    @OneToMany(mappedBy = "expenses")
-//    @JoinTable(
-//            name = "expenses",
-//            joinColumns = {@JoinColumn(name = "Totally")},
-//            inverseJoinColumns = {@JoinColumn(name = "ObjectiveId")})
-//    private List<TradeListRepository> tradeList;
+//    @OneToMany
+    @ManyToMany
+    @JoinTable(
+            name = "expenses_transactionList",
+            joinColumns = {@JoinColumn(name = "expenses")},
+            inverseJoinColumns = {@JoinColumn(name = "transactionList")})
+    private List<TradeList> tradeList;
 
     public MonthlyExpenses() {
     }
 
-//    public List<TradeListRepository> getTradeList() {
-//        return tradeList;
-//    }
-//
-//    public void setTradeList(List<TradeListRepository> tradeList) {
-//        this.tradeList = tradeList;
-//    }
+    public List<TradeList> getTradeList() {
+        return tradeList;
+    }
+
+    public void setTradeList(List<TradeList> tradeList) {
+        this.tradeList = tradeList;
+    }
 
     public Long getID() {
         return ID;
@@ -51,7 +55,7 @@ public class MonthlyExpenses {
         return Totally;
     }
 
-    public void setTotally(float totally) {
+    public void setTotally(int totally) {
         Totally = totally;
     }
 }
