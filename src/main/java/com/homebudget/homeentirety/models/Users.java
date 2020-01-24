@@ -19,8 +19,5 @@ public class Users {
     private String email;
     private int age;
 
-    public Users() {
-    }
-
 }
 

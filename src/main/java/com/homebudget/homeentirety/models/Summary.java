@@ -19,5 +19,4 @@ public class Summary {
     private String objective;
     private int totally;
 
-
 }

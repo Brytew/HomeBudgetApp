@@ -12,8 +12,4 @@ public class Source {
     private String store;
     private float amount;
 
-
-    public Source() {
-    }
-
 }
