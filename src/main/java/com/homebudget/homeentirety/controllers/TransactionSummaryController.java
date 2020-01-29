@@ -21,7 +21,7 @@ public class TransactionSummaryController {
 
     @GetMapping
     @RequestMapping("{ID}")
-    public TransactionSummary get(@PathVariable Integer ID) {
+    public TransactionSummary get(@PathVariable Long ID) {
         return transactionSummaryRepository.getOne(ID);
     }
 
@@ -31,7 +31,7 @@ public class TransactionSummaryController {
     }
 
     @RequestMapping(value = "{ID", method = RequestMethod.DELETE)
-    public void delete(@PathVariable Integer ID) {
+    public void delete(@PathVariable Long ID) {
         transactionSummaryRepository.deleteById(ID);
     }
 }

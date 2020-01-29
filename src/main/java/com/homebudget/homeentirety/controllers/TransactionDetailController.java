@@ -2,8 +2,10 @@ package com.homebudget.homeentirety.controllers;
 
 import com.homebudget.homeentirety.models.TransactionDetail;
 import com.homebudget.homeentirety.repositories.TransactionDetailRepository;
+import com.homebudget.homeentirety.repositories.TransactionSummaryDetailCurrentMonthRepository;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
@@ -25,17 +27,15 @@ public class TransactionDetailController {
         courses.add(new TransactionDetail(null, 1L, new BigDecimal("34.99"), null));
         courses.add(new TransactionDetail(null, 3L, new BigDecimal("25.59"), null));
         courses.add(new TransactionDetail(null, 3L, new BigDecimal("12.20"), null));
-
         transactionDetailRepository.saveAll(courses);
     }
-
 
     @GetMapping
     public List<TransactionDetail> getList() {
         return transactionDetailRepository.findAll();
     }
 
-    @GetMapping ("/sum")
+    @GetMapping("/sum")
     public List<TransactionDetail> getSumaryId(@RequestParam Long transactionSummaryId) {
         return transactionDetailRepository.findAllBytransactionSummaryId(transactionSummaryId);
     }
