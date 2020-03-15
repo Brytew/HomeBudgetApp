@@ -10,6 +10,6 @@ public interface TransactionDetailRepository extends JpaRepository<TransactionDe
 
     List<TransactionDetail> findAllBytransactionSummaryId(Long transactionSummaryId);
 
-    @Query("SELECT u FROM TransactionDetail u where u.createdAt >= '2020-01-28T01:15:10.0330242' AND u.createdAt <= '2020-01-28T23:17:10.2062679'")
+    @Query("SELECT u FROM TransactionDetail u where u.createdAt >= '2020-01-28T00:00:00.00' AND u.createdAt <= '2020-01-28T23:59:59.00'")
     List<TransactionDetail> getCurrentMonthExpensesQuery();
 }

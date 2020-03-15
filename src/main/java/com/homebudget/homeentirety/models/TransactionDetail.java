@@ -27,4 +27,8 @@ public class TransactionDetail {
     private BigDecimal amount;
     @CreationTimestamp
     private Instant createdAt;
+
+
+
+
 }
