@@ -30,12 +30,7 @@ public class TransactionDetailController {
     }
 
     @GetMapping("/sum")
-    public List<TransactionDetail> getSumaryId(@RequestParam Long transactionSummaryId) {
+    public List<TransactionDetail> getSummaryId(@RequestParam Long transactionSummaryId) {
         return transactionDetailRepository.findAllBytransactionSummaryId(transactionSummaryId);
-    }
-
-    @PostMapping
-    public TransactionDetail createTransaction(@RequestBody final TransactionDetail transactionDetail) {
-        return transactionDetailRepository.saveAndFlush(transactionDetail);
     }
 }

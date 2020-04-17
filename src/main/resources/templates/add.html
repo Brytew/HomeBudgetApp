@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>HomeBudgetApp</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+<h1>Dane:</h1>
+<form method=post th:object="${transactionDetail}">
+
+    <label for="amount"> Kwota: </label>
+    <input type="text" th:field="*{amount}"/>
+    <label for="transactionSummaryId"> Cel: </label>
+    <input type="text" th:field="*{transactionSummaryId}"/>
+    <label for="wallet"> wallet: </label>
+    <input type="text" th:field="*{wallet}"/>
+    <br/>
+
+    <div>
+        <input type="submit" value="Prześlij"/>
+    </div>
+
+</form>
+</body>
+</html>
