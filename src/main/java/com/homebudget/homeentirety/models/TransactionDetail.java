@@ -20,21 +20,23 @@ import java.time.Instant;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TransactionDetail {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
-//    private Long transactionSummaryId;
-//    private BigDecimal amount;
-//    @CreationTimestamp
-//    private Instant createdAt;
-//    private Long wallet;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String transactionSummaryId;
-    private String amount;
+    private Long transactionSummaryId;
+    private BigDecimal amount;
     @CreationTimestamp
     private Instant createdAt;
-    private String wallet;
+    private Long wallet;
+
+    //Gdy dodaję recordy ręcznie:
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
+//    private String transactionSummaryId;
+//    private String amount;
+//  //  @CreationTimestamp
+//    private Instant createdAt;
+//    private String wallet;
 }

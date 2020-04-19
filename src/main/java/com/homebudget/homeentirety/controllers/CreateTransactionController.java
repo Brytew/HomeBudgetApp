@@ -19,10 +19,10 @@ public class CreateTransactionController {
     @Autowired
     private TransactionDetailRepository transactionDetailRepository;
 
-//    @PostMapping
-//    public TransactionDetail createTransaction(@RequestBody final TransactionDetail transactionDetail) {
-//        return transactionDetailRepository.saveAndFlush(transactionDetail);
-//    }
+    @PostMapping
+    public TransactionDetail createTransaction(@ModelAttribute final TransactionDetail transactionDetail) {
+        return transactionDetailRepository.saveAndFlush(transactionDetail);
+    }
 
     @GetMapping
     public String Add(Model model) {
@@ -31,9 +31,9 @@ public class CreateTransactionController {
     }
 
 
-    @PostMapping
-    public String addTransaction(TransactionDetail test) {
-        log.info("Widzę dodawaną transakcję w konsoli: " + test);
-        return "redirect:/add";
-    }
+//    @PostMapping
+//    public String addTransaction(TransactionDetail test) {
+//        log.info("Widzę dodawaną transakcję w konsoli: " + test);
+//        return "redirect:/add";
+//    }
 }
