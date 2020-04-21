@@ -30,13 +30,14 @@ public class TransactionDetail {
     private Instant createdAt;
     private Long wallet;
 
-    //Gdy dodaję recordy ręcznie:
+////    Gdy dodaję recordy ręcznie:
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private Long id;
-//    private String transactionSummaryId;
-//    private String amount;
+//    private Long transactionSummaryId;
+//    private BigDecimal amount;
 //  //  @CreationTimestamp
 //    private Instant createdAt;
-//    private String wallet;
+//    private Long wallet;
+
 }
